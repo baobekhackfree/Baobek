@@ -1,0 +1,17 @@
+
+-- Thêm ở đầu script
+local controlMode = "Camera"
+
+-- Tạo nút chuyển chế độ sau khi đã tạo panel
+local modeButton = makeButton(
+    "Điều khiển: CAMERA",
+    UDim2.fromOffset(10, 285)
+)
+
+modeButton.Activated:Connect(function()
+    controlMode = controlMode == "Camera"
+        and "Character" or "Camera"
+
+    modeButton.Text = "Điều khiển: " ..
+        (controlMode == "Camera" and "CAMERA" or "NHÂN VẬT")
+end)
